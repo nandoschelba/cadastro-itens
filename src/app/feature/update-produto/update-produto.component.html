@@ -1,0 +1,45 @@
+<app-menu>
+<h3>Atualizar Item</h3>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nome:</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="nome" placeholder="Digite o nome do produto"
+      [(ngModel)]="item.nome">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Unidade de medida:</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="unidade" placeholder="Digite a unidade de medida"
+      [(ngModel)]="item.unidade">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Quantidade:</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" name="quantidade" placeholder="Digite a quantidade"
+      [(ngModel)]="item.quantidade">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Preço:</label>
+    <input type="number" class="form-control" id="exampleFormControlInput2" name="preco" placeholder="Digite o preço do item"
+      [(ngModel)]="item.preco">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Produto perecível?</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escreva sim ou não"
+      [(ngModel)]="item.perecivel">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Data de Validade:</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" name="title"
+      [(ngModel)]="item.dataValidade">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Data de Fabricação:</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" name="title"
+      [(ngModel)]="item.dataFabricacao">
+  </div>
+</form>
+<button type="button" class="btn btn-success mr-2" (click)="updateItem()">Atualizar</button>
+<button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+<div class="alert alert-warning mt-2" role="alert" *ngIf="open">
+  Atualizado com sucesso
+</div>
+</app-menu>

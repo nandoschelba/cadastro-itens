@@ -1,0 +1,9 @@
+<app-menu>
+<h1>Excluir item</h1>
+<h4>Tem certeza que quer excluir esse item?</h4>
+<button type="button" class="btn btn-success mr-2" (click)="deleteItem()">Deletar</button>
+<button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+<div class="alert alert-danger mt-2" role="alert" *ngIf="open">
+  Deletado com sucesso
+</div>
+</app-menu>

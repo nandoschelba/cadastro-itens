@@ -1,0 +1,33 @@
+<app-menu>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Unidade de medida</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Perecível</th>
+        <th scope="col">Data de validade</th>
+        <th scope="col">Data de fabricação</th>
+        <th scope="col">Editar/Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itens">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.nome}}</td>
+        <td>{{item.unidade}}</td>
+        <td>{{item.quantidade}}</td>
+        <td>{{item.preco}}</td>
+        <td>{{item.perecivel}}</td>
+        <td>{{item.dataValidade}}</td>
+        <td>{{item.dataFabricacao}}</td>
+        <td><button routerLink="/itens/{{item.id}}" class="btn btn-outline-success ml-2"
+            type="submit">Editar</button>
+          <button routerLink="/itens/delete/{{item.id}}" class="btn btn-outline-danger ml-2"
+            type="submit">Excluir</button>
+        </td>
+    </tbody>
+  </table>
+</app-menu>
