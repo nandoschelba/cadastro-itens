@@ -1,45 +1,57 @@
 <app-menu>
-  <h3>Novo produto</h3>
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Nome:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name="nome" placeholder="Digite o nome do produto"
+  <mat-card>
+    <mat-card-title>Novo Item</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+        matInput 
+        maxlength="50"
+        [formControl]="form"
+        required 
+        type="text" 
+        placeholder="Digite o nome do produto" 
+        name="nome" 
         [(ngModel)]="item.nome">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Unidade de medida:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name="unidade" placeholder="Digite a unidade de medida"
+        <mat-error *ngIf="form.invalid ">{{getErrorMessage(nome)}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput 
+        required
+        placeholder="Digite a unidade de medida" 
+        name="unidade" 
         [(ngModel)]="item.unidade">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Quantidade:</label>
-      <input type="number" class="form-control" id="exampleFormControlInput1" name="quantidade" placeholder="Digite a quantidade"
+        <mat-error *ngIf="form.invalid ">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput 
+        type="number" 
+        placeholder="Quantidade" 
+        name="quantidade" 
         [(ngModel)]="item.quantidade">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput2">Preço:</label>
-      <input type="number" class="form-control" id="exampleFormControlInput2" name="preco" placeholder="Digite o preço do item"
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+        required
+        type="number" 
+        placeholder="Digite o preço do produto" 
+        name="preço" 
         [(ngModel)]="item.preco">
+        <mat-error *ngIf="form.invalid ">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="O produto é perecível?" name="perecivel" [(ngModel)]="item.perecivel" [formControl]="perecivel">
+        <mat-error *ngIf="form.invalid ">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="date" placeholder="Data de validade" name="validade" [(ngModel)]="item.dataValidade">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput required type="date" placeholder="Data de Fabricação" name="fabricacao" [(ngModel)]="item.dataFabricacao">
+      </mat-form-field>
+    </form>
+    <div class="button mr-4 ml-2">
+      <button [disabled]="!form.valid" class="btn-salvar btn" type="button"  mat-raised button (click)="createItem()">Salvar</button>
+      <button class="btn-cancelar btn purple" type="button" mat-raised button (click)="cancel()">Cancelar</button>
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Produto perecível?</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escreva sim ou não"
-        [(ngModel)]="item.perecivel">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Data de Validade:</label>
-      <input type="date" class="form-control" id="exampleFormControlInput1" name="title"
-        [(ngModel)]="item.dataValidade">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Data de Fabricação:</label>
-      <input type="date" class="form-control" id="exampleFormControlInput1" name="title"
-        [(ngModel)]="item.dataFabricacao">
-    </div>
-  </form>
-  <button type="button" class="btn btn-success mr-2" (click)="createItem()">Cadastrar Item</button>
-  <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
-  <div class="alert alert-warning mt-2" role="alert" *ngIf="open">
-    Criado com sucesso
-  </div>
+  </mat-card>
 </app-menu>

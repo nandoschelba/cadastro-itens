@@ -1,0 +1,9 @@
+table {
+    width: 100%;
+}
+
+
+i.delete {
+    color: red;
+    margin-left: 5px;
+}

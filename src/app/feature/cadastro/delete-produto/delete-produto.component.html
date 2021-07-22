@@ -1,0 +1,33 @@
+<app-menu>
+  <mat-card>
+    <mat-card-title>Excluir Item</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input matInput type="text" name="nome" [value]="item.nome" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="unidade" [value]="item.unidade" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" name="quantidade" [value]="item.quantidade" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" name="preço" [value]="item.preco" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="perecivel" [value]="item.perecivel" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="date" name="validade" [value]="item.dataValidade" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="date" name="fabricacao" [value]="item.dataFabricacao" disabled>
+      </mat-form-field>
+    </form>
+
+    <div class="button mr-4 ml-2">
+      <button class="btn-salvar btn" type="button" mat-raised button (click)="deleteItem()">Excluir</button>
+      <button class="btn-cancelar btn purple" type="button" mat-raised button (click)="cancel()">Cancelar</button>
+    </div>
+  </mat-card>
+</app-menu>

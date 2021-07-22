@@ -1,4 +1,4 @@
-import { ProdutoService } from './../service/produto.service';
+import { ProdutoService } from '../../service/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/assets/model/produto.model';
@@ -19,17 +19,17 @@ export class UpdateProdutoComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id')
-    this.produtoService.listById(id).subscribe(itens => {
+    this.produtoService.getId(id).subscribe(itens => {
       this.item = itens
     })
   }
 
   updateItem(): void {
-    this.produtoService.update(this.item).subscribe(() => {
-      this.produtoService.showMsg()
+    this.produtoService.putItem(this.item).subscribe(() => {
+      this.produtoService.showMessage('Item atualizado com sucesso!')
       this.open = true
       setTimeout(() => {
-        this.router.navigate(['/'])
+        this.router.navigate(['/itens'])
       }
         , 2000)
 
@@ -37,7 +37,7 @@ export class UpdateProdutoComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/'])
+    this.router.navigate(['/itens'])
   }
 
 }

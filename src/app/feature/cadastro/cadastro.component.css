@@ -1,0 +1,30 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-salvar {
+margin-right: 10px;
+background-color: #673ab7;
+width: 140px;
+color: #FFF;
+}
+
+.btn-cancelar {
+    border-color: #673ab7;
+}
+
+.ng-invalid.ng-touched:not(form, mat-form-field) {
+    border: red;
+}
+
+.form-error {
+    margin-top: -17px;
+    font-size: x-small;
+    color: red;
+    margin-bottom: 3px;
+}
+
+.mat-form-field {
+    margin-bottom: 5px;
+}

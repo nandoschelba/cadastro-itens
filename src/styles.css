@@ -9,6 +9,20 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* .vertical-middle {
+.vertical-middle {
     vertical-align: middle;
-}  */
+} 
+
+.purple {
+    color: #673ab7;
+}
+
+.msg-sucess {
+    background-color: #673ab7;
+    color: #fff;
+}
+
+.msg-erro {
+    background-color: red;
+    color: #fff;
+}

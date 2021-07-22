@@ -1,6 +1,6 @@
 import { HomeComponent } from './feature/home/home.component';
-import { DeleteProdutoComponent } from './feature/delete-produto/delete-produto.component';
-import { UpdateProdutoComponent } from './feature/update-produto/update-produto.component';
+import { DeleteProdutoComponent } from './feature/cadastro/delete-produto/delete-produto.component';
+import { UpdateProdutoComponent } from './feature/cadastro/update-produto/update-produto.component';
 import { CadastroComponent } from './feature/cadastro/cadastro.component';
 import { ListagemComponent } from './feature/listagem/listagem.component';
 import { NgModule } from '@angular/core';

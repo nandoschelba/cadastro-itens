@@ -9,12 +9,13 @@ import { Item } from 'src/assets/model/produto.model';
 })
 export class ListagemComponent implements OnInit {
 
-  itens: Item[]
+  itens: Item[];
+  displayedColumns = ['id', 'nome', 'unidade', 'quantidade', 'preco', 'perecivel', 'dataValidade', 'dataFabricacao', 'action'];
 
   constructor(private produtoService: ProdutoService) { }
 
   ngOnInit() {
-    this.produtoService.listaItens().subscribe(itens => {
+    this.produtoService.getItens().subscribe(itens => {
       this.itens = itens
       console.log(itens)
     })

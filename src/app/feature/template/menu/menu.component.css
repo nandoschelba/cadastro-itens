@@ -4,7 +4,7 @@
 }
 
 .sidenav {
-  width: 110px;
+  width: 140px;
 }
 
 .sidenav .mat-toolbar {
@@ -25,4 +25,14 @@
 }
 .spacer {
   flex: 1 1 auto;
+}
+
+.nav-list {
+  margin-left: -5px;
+  padding-right: 5px;
+}
+
+.content { 
+  padding: 16px;
+  color: #FFF;
 }
