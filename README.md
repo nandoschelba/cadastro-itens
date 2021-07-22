@@ -48,12 +48,42 @@ Serviço: `ProdutoService`
 Serviço responsável por enviar e trazer as informações de itens adicionados, atualizados ou removidos.
 <br>
 
-### <a name="servico1"></a> 1 - create
-Cadastra através do método post um item com base nas informações passadas através do model. `<Item>`
+### <a name="servico1"></a> 1 - postItem
+Cadastra através do método post um item com base nas informações passadas através do model.
 
  <br>
+
+ ### <a name="servico2"></a> 1 - errorHandler
+Função que identifica possível erro de conexão do servidor e se integra com a de exibir mensagem.
+
+ <br>
+
+ ### <a name="servico3"></a> 1 - showMessage
+Função que exibe mensagem de erro quando é detectado
+
+ <br>
+
+ ### <a name="servico4"></a> 1 - getItens
+Obtém a lista de itens derivada do model Item[].
+
+ <br>
+
+ ### <a name="servico5"></a> 1 - getId
+Obtém a lista de itens derivada do seu id, com o propósito de navegação, atualizar e excluir determinado item.
+
+<br>
+
+### <a name="servico6"></a> 1 - putItem
+Atualiza determinado item baseado no seu id.
+
+<br>
+
+### <a name="servico7"></a> 1 - deleteItem
+Deleta determinado item usando o id como referência.
+
+<br>
 
 ```
 
 ## Desenvolvedores/Contribuintes:
-[Luiz Fernando Schelbauer](mailto:nandoschelba@gmail.com)
+Luiz Fernando Schelbauer(nandoschelba@gmail.com)
